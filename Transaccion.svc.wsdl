@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="Transaccion" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+	<wsp:Policy wsu:Id="WS2007HttpBinding_ITransaccion_policy">
+		<wsp:ExactlyOne>
+			<wsp:All>
+				<wsaw:UsingAddressing/>
+			</wsp:All>
+		</wsp:ExactlyOne>
+	</wsp:Policy>
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://tempuri.org/Imports">
+			<xsd:import schemaLocation="Transaccion.svc.xsd=xsd0" namespace="http://tempuri.org/"/>
+			<xsd:import schemaLocation="Transaccion.svc.xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+			<xsd:import schemaLocation="Transaccion.svc.xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WSSolucionNeurona"/>
+			<xsd:import schemaLocation="Transaccion.svc.xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="ITransaccion_Probar_InputMessage">
+		<wsdl:part name="parameters" element="tns:Probar"/>
+	</wsdl:message>
+	<wsdl:message name="ITransaccion_Probar_OutputMessage">
+		<wsdl:part name="parameters" element="tns:ProbarResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ITransaccion_CrearTransOriginador_InputMessage">
+		<wsdl:part name="parameters" element="tns:CrearTransOriginador"/>
+	</wsdl:message>
+	<wsdl:message name="ITransaccion_CrearTransOriginador_OutputMessage">
+		<wsdl:part name="parameters" element="tns:CrearTransOriginadorResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ITransaccion_CrearTransOriginadorExterno_InputMessage">
+		<wsdl:part name="parameters" element="tns:CrearTransOriginadorExterno"/>
+	</wsdl:message>
+	<wsdl:message name="ITransaccion_CrearTransOriginadorExterno_OutputMessage">
+		<wsdl:part name="parameters" element="tns:CrearTransOriginadorExternoResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ITransaccion_CrearTransaccionVerificada_InputMessage">
+		<wsdl:part name="parameters" element="tns:CrearTransaccionVerificada"/>
+	</wsdl:message>
+	<wsdl:message name="ITransaccion_CrearTransaccionVerificada_OutputMessage">
+		<wsdl:part name="parameters" element="tns:CrearTransaccionVerificadaResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ITransaccion_ConsultarComisiones_InputMessage">
+		<wsdl:part name="parameters" element="tns:ConsultarComisiones"/>
+	</wsdl:message>
+	<wsdl:message name="ITransaccion_ConsultarComisiones_OutputMessage">
+		<wsdl:part name="parameters" element="tns:ConsultarComisionesResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ITransaccion_ConsultarComisionesFacturador_InputMessage">
+		<wsdl:part name="parameters" element="tns:ConsultarComisionesFacturador"/>
+	</wsdl:message>
+	<wsdl:message name="ITransaccion_ConsultarComisionesFacturador_OutputMessage">
+		<wsdl:part name="parameters" element="tns:ConsultarComisionesFacturadorResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ITransaccion_InactivarPrenota_InputMessage">
+		<wsdl:part name="parameters" element="tns:InactivarPrenota"/>
+	</wsdl:message>
+	<wsdl:message name="ITransaccion_InactivarPrenota_OutputMessage">
+		<wsdl:part name="parameters" element="tns:InactivarPrenotaResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ITransaccion_ConsultarVentana_InputMessage">
+		<wsdl:part name="parameters" element="tns:ConsultarVentana"/>
+	</wsdl:message>
+	<wsdl:message name="ITransaccion_ConsultarVentana_OutputMessage">
+		<wsdl:part name="parameters" element="tns:ConsultarVentanaResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ITransaccion_ConsultaTransaccionesPorPaquete_InputMessage">
+		<wsdl:part name="parameters" element="tns:ConsultaTransaccionesPorPaquete"/>
+	</wsdl:message>
+	<wsdl:message name="ITransaccion_ConsultaTransaccionesPorPaquete_OutputMessage">
+		<wsdl:part name="parameters" element="tns:ConsultaTransaccionesPorPaqueteResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ITransaccion_ConsultaTransaccionesPorLote_InputMessage">
+		<wsdl:part name="parameters" element="tns:ConsultaTransaccionesPorLote"/>
+	</wsdl:message>
+	<wsdl:message name="ITransaccion_ConsultaTransaccionesPorLote_OutputMessage">
+		<wsdl:part name="parameters" element="tns:ConsultaTransaccionesPorLoteResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ITransaccion_ConsultaTransacciones_InputMessage">
+		<wsdl:part name="parameters" element="tns:ConsultaTransacciones"/>
+	</wsdl:message>
+	<wsdl:message name="ITransaccion_ConsultaTransacciones_OutputMessage">
+		<wsdl:part name="parameters" element="tns:ConsultaTransaccionesResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ITransaccion_ConsultaTransaccionesExtend_InputMessage">
+		<wsdl:part name="parameters" element="tns:ConsultaTransaccionesExtend"/>
+	</wsdl:message>
+	<wsdl:message name="ITransaccion_ConsultaTransaccionesExtend_OutputMessage">
+		<wsdl:part name="parameters" element="tns:ConsultaTransaccionesExtendResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ITransaccion_ConsultarTransaccionesPorIdExterno_InputMessage">
+		<wsdl:part name="parameters" element="tns:ConsultarTransaccionesPorIdExterno"/>
+	</wsdl:message>
+	<wsdl:message name="ITransaccion_ConsultarTransaccionesPorIdExterno_OutputMessage">
+		<wsdl:part name="parameters" element="tns:ConsultarTransaccionesPorIdExternoResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ITransaccion_ConsultarMovimientosCallCenter_InputMessage">
+		<wsdl:part name="parameters" element="tns:ConsultarMovimientosCallCenter"/>
+	</wsdl:message>
+	<wsdl:message name="ITransaccion_ConsultarMovimientosCallCenter_OutputMessage">
+		<wsdl:part name="parameters" element="tns:ConsultarMovimientosCallCenterResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ITransaccion_ConsultarDetalleMovimientosCallCenter_InputMessage">
+		<wsdl:part name="parameters" element="tns:ConsultarDetalleMovimientosCallCenter"/>
+	</wsdl:message>
+	<wsdl:message name="ITransaccion_ConsultarDetalleMovimientosCallCenter_OutputMessage">
+		<wsdl:part name="parameters" element="tns:ConsultarDetalleMovimientosCallCenterResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ITransaccion_ConsultarDetalleContrapartidaCallCenter_InputMessage">
+		<wsdl:part name="parameters" element="tns:ConsultarDetalleContrapartidaCallCenter"/>
+	</wsdl:message>
+	<wsdl:message name="ITransaccion_ConsultarDetalleContrapartidaCallCenter_OutputMessage">
+		<wsdl:part name="parameters" element="tns:ConsultarDetalleContrapartidaCallCenterResponse"/>
+	</wsdl:message>
+	<wsdl:portType name="ITransaccion">
+		<wsdl:operation name="Probar">
+			<wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/Probar" message="tns:ITransaccion_Probar_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ProbarResponse" message="tns:ITransaccion_Probar_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="CrearTransOriginador">
+			<wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/CrearTransOriginador" message="tns:ITransaccion_CrearTransOriginador_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/CrearTransOriginadorResponse" message="tns:ITransaccion_CrearTransOriginador_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="CrearTransOriginadorExterno">
+			<wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/CrearTransOriginadorExterno" message="tns:ITransaccion_CrearTransOriginadorExterno_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/CrearTransOriginadorExternoResponse" message="tns:ITransaccion_CrearTransOriginadorExterno_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="CrearTransaccionVerificada">
+			<wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/CrearTransaccionVerificada" message="tns:ITransaccion_CrearTransaccionVerificada_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/CrearTransaccionVerificadaResponse" message="tns:ITransaccion_CrearTransaccionVerificada_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultarComisiones">
+			<wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/ConsultarComisiones" message="tns:ITransaccion_ConsultarComisiones_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ConsultarComisionesResponse" message="tns:ITransaccion_ConsultarComisiones_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultarComisionesFacturador">
+			<wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/ConsultarComisionesFacturador" message="tns:ITransaccion_ConsultarComisionesFacturador_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ConsultarComisionesFacturadorResponse" message="tns:ITransaccion_ConsultarComisionesFacturador_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="InactivarPrenota">
+			<wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/InactivarPrenota" message="tns:ITransaccion_InactivarPrenota_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/InactivarPrenotaResponse" message="tns:ITransaccion_InactivarPrenota_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultarVentana">
+			<wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/ConsultarVentana" message="tns:ITransaccion_ConsultarVentana_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ConsultarVentanaResponse" message="tns:ITransaccion_ConsultarVentana_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultaTransaccionesPorPaquete">
+			<wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/ConsultaTransaccionesPorPaquete" message="tns:ITransaccion_ConsultaTransaccionesPorPaquete_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ConsultaTransaccionesPorPaqueteResponse" message="tns:ITransaccion_ConsultaTransaccionesPorPaquete_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultaTransaccionesPorLote">
+			<wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/ConsultaTransaccionesPorLote" message="tns:ITransaccion_ConsultaTransaccionesPorLote_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ConsultaTransaccionesPorLoteResponse" message="tns:ITransaccion_ConsultaTransaccionesPorLote_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultaTransacciones">
+			<wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/ConsultaTransacciones" message="tns:ITransaccion_ConsultaTransacciones_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ConsultaTransaccionesResponse" message="tns:ITransaccion_ConsultaTransacciones_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultaTransaccionesExtend">
+			<wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/ConsultaTransaccionesExtend" message="tns:ITransaccion_ConsultaTransaccionesExtend_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ConsultaTransaccionesExtendResponse" message="tns:ITransaccion_ConsultaTransaccionesExtend_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultarTransaccionesPorIdExterno">
+			<wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/ConsultarTransaccionesPorIdExterno" message="tns:ITransaccion_ConsultarTransaccionesPorIdExterno_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ConsultarTransaccionesPorIdExternoResponse" message="tns:ITransaccion_ConsultarTransaccionesPorIdExterno_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultarMovimientosCallCenter">
+			<wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/ConsultarMovimientosCallCenter" message="tns:ITransaccion_ConsultarMovimientosCallCenter_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ConsultarMovimientosCallCenterResponse" message="tns:ITransaccion_ConsultarMovimientosCallCenter_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultarDetalleMovimientosCallCenter">
+			<wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/ConsultarDetalleMovimientosCallCenter" message="tns:ITransaccion_ConsultarDetalleMovimientosCallCenter_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ConsultarDetalleMovimientosCallCenterResponse" message="tns:ITransaccion_ConsultarDetalleMovimientosCallCenter_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultarDetalleContrapartidaCallCenter">
+			<wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/ConsultarDetalleContrapartidaCallCenter" message="tns:ITransaccion_ConsultarDetalleContrapartidaCallCenter_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ConsultarDetalleContrapartidaCallCenterResponse" message="tns:ITransaccion_ConsultarDetalleContrapartidaCallCenter_OutputMessage"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="WS2007HttpBinding_ITransaccion" type="tns:ITransaccion">
+		<wsp:PolicyReference URI="#WS2007HttpBinding_ITransaccion_policy"/>
+		<soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="Probar">
+			<soap12:operation soapAction="http://tempuri.org/ITransaccion/Probar" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="CrearTransOriginador">
+			<soap12:operation soapAction="http://tempuri.org/ITransaccion/CrearTransOriginador" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="CrearTransOriginadorExterno">
+			<soap12:operation soapAction="http://tempuri.org/ITransaccion/CrearTransOriginadorExterno" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="CrearTransaccionVerificada">
+			<soap12:operation soapAction="http://tempuri.org/ITransaccion/CrearTransaccionVerificada" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultarComisiones">
+			<soap12:operation soapAction="http://tempuri.org/ITransaccion/ConsultarComisiones" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultarComisionesFacturador">
+			<soap12:operation soapAction="http://tempuri.org/ITransaccion/ConsultarComisionesFacturador" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="InactivarPrenota">
+			<soap12:operation soapAction="http://tempuri.org/ITransaccion/InactivarPrenota" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultarVentana">
+			<soap12:operation soapAction="http://tempuri.org/ITransaccion/ConsultarVentana" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultaTransaccionesPorPaquete">
+			<soap12:operation soapAction="http://tempuri.org/ITransaccion/ConsultaTransaccionesPorPaquete" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultaTransaccionesPorLote">
+			<soap12:operation soapAction="http://tempuri.org/ITransaccion/ConsultaTransaccionesPorLote" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultaTransacciones">
+			<soap12:operation soapAction="http://tempuri.org/ITransaccion/ConsultaTransacciones" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultaTransaccionesExtend">
+			<soap12:operation soapAction="http://tempuri.org/ITransaccion/ConsultaTransaccionesExtend" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultarTransaccionesPorIdExterno">
+			<soap12:operation soapAction="http://tempuri.org/ITransaccion/ConsultarTransaccionesPorIdExterno" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultarMovimientosCallCenter">
+			<soap12:operation soapAction="http://tempuri.org/ITransaccion/ConsultarMovimientosCallCenter" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultarDetalleMovimientosCallCenter">
+			<soap12:operation soapAction="http://tempuri.org/ITransaccion/ConsultarDetalleMovimientosCallCenter" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultarDetalleContrapartidaCallCenter">
+			<soap12:operation soapAction="http://tempuri.org/ITransaccion/ConsultarDetalleContrapartidaCallCenter" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="Transaccion">
+		<wsdl:port name="WS2007HttpBinding_ITransaccion" binding="tns:WS2007HttpBinding_ITransaccion">
+			<soap12:address location="http://172.16.41.102/WSSolucionNeurona/Transaccion.svc"/>
+			<wsa10:EndpointReference>
+				<wsa10:Address>http://172.16.41.102/WSSolucionNeurona/Transaccion.svc</wsa10:Address>
+			</wsa10:EndpointReference>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

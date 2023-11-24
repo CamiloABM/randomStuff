@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WSSolucionNeurona" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/WSSolucionNeurona">
+	<xs:import schemaLocation="Transaccion.svc.xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+	<xs:complexType name="RtaCrearTransOriginador">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="DescError" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Error" type="xs:double"/>
+			<xs:element minOccurs="0" name="FechaMsg" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="NumAutoriza" type="xs:double"/>
+			<xs:element minOccurs="0" name="Rqid" nillable="true" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="RtaCrearTransOriginador" nillable="true" type="tns:RtaCrearTransOriginador"/>
+	<xs:complexType name="RtaCrearTransaccionVerficada">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="DescripcionError" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="ExisteError" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="ListaTransaccionesVerificadas" nillable="true" type="tns:ArrayOfobjTransaccionVerificada"/>
+			<xs:element minOccurs="0" name="NumeroAutorizacion" type="xs:int"/>
+			<xs:element minOccurs="0" name="Rqid" nillable="true" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="RtaCrearTransaccionVerficada" nillable="true" type="tns:RtaCrearTransaccionVerficada"/>
+	<xs:complexType name="ArrayOfobjTransaccionVerificada">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="objTransaccionVerificada" nillable="true" type="tns:objTransaccionVerificada"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfobjTransaccionVerificada" nillable="true" type="tns:ArrayOfobjTransaccionVerificada"/>
+	<xs:complexType name="objTransaccionVerificada">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Adenda" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="BancoDestino" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Causal" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="CuentaDestino" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="CuentaOriginador" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="DescripcionCausal" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="FechaPago" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="IDEstado" type="xs:int"/>
+			<xs:element minOccurs="0" name="IDLote" type="xs:int"/>
+			<xs:element minOccurs="0" name="IDPaquete" type="xs:int"/>
+			<xs:element minOccurs="0" name="IDTransaccion" type="xs:int"/>
+			<xs:element minOccurs="0" name="MontoComision" type="xs:double"/>
+			<xs:element minOccurs="0" name="MontoTransaccion" type="xs:double"/>
+			<xs:element minOccurs="0" name="NombreDestinatario" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="NombreOriginador" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="ReferenciaDePago" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="TipoCuentaDestino" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="TransitoBancoDestino" nillable="true" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="objTransaccionVerificada" nillable="true" type="tns:objTransaccionVerificada"/>
+	<xs:complexType name="RtaConsComision">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="DescError" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Error" type="xs:double"/>
+			<xs:element minOccurs="0" name="FechaMsg" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="MontoComision" type="xs:double"/>
+			<xs:element minOccurs="0" name="Rqid" nillable="true" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="RtaConsComision" nillable="true" type="tns:RtaConsComision"/>
+	<xs:complexType name="RtaConsultarComisionesFacturador">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="DescError" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="DetalleComisiones" nillable="true" type="q1:ArrayOfKeyValueOfintdouble" xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+			<xs:element minOccurs="0" name="ExisteError" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="FechaMsg" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="MontoTotalComision" type="xs:double"/>
+			<xs:element minOccurs="0" name="Rqid" nillable="true" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="RtaConsultarComisionesFacturador" nillable="true" type="tns:RtaConsultarComisionesFacturador"/>
+	<xs:complexType name="RtaInactivarPrenota">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="DescError" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Error" type="xs:double"/>
+			<xs:element minOccurs="0" name="Exitoso" type="xs:boolean"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="RtaInactivarPrenota" nillable="true" type="tns:RtaInactivarPrenota"/>
+	<xs:complexType name="RtaConsultarVentana">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="DescError" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Error" type="xs:double"/>
+			<xs:element minOccurs="0" name="Fecha" type="xs:dateTime"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="RtaConsultarVentana" nillable="true" type="tns:RtaConsultarVentana"/>
+	<xs:complexType name="RtaConsultaTransaccionesPorPaquete">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="DescripcionError" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="ExisteError" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="ListaPaquetes" nillable="true" type="tns:ArrayOfRtaPaquete"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="RtaConsultaTransaccionesPorPaquete" nillable="true" type="tns:RtaConsultaTransaccionesPorPaquete"/>
+	<xs:complexType name="ArrayOfRtaPaquete">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="RtaPaquete" nillable="true" type="tns:RtaPaquete"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfRtaPaquete" nillable="true" type="tns:ArrayOfRtaPaquete"/>
+	<xs:complexType name="RtaPaquete">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="CantidadLotes" type="xs:int"/>
+			<xs:element minOccurs="0" name="CantidadTransacciones" type="xs:int"/>
+			<xs:element minOccurs="0" name="Historico" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="IdEstado" type="xs:int"/>
+			<xs:element minOccurs="0" name="IdOrigen" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="IdPaquete" type="xs:int"/>
+			<xs:element minOccurs="0" name="IdUsuario" type="xs:long"/>
+			<xs:element minOccurs="0" name="NombreArchivo" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="NombreEstado" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="OrigenPaquete" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="TotalCredito" type="xs:double"/>
+			<xs:element minOccurs="0" name="TotalDebito" type="xs:double"/>
+			<xs:element minOccurs="0" name="TotalPaquete" type="xs:double"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="RtaPaquete" nillable="true" type="tns:RtaPaquete"/>
+	<xs:complexType name="RtaConsultaTransaccionesPorLote">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="DescripcionError" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="ExisteError" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="ListaLotes" nillable="true" type="tns:ArrayOfRtaLote"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="RtaConsultaTransaccionesPorLote" nillable="true" type="tns:RtaConsultaTransaccionesPorLote"/>
+	<xs:complexType name="ArrayOfRtaLote">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="RtaLote" nillable="true" type="tns:RtaLote"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfRtaLote" nillable="true" type="tns:ArrayOfRtaLote"/>
+	<xs:complexType name="RtaLote">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="CantidadTransacciones" type="xs:int"/>
+			<xs:element minOccurs="0" name="CuentaOriginador" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="DescripcionLote" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Fecha" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="Historico" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="IdLote" type="xs:double"/>
+			<xs:element minOccurs="0" name="IdOriginador" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="NombreEstado" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="NumeroAprobaciones" type="xs:int"/>
+			<xs:element minOccurs="0" name="TotalCredito" type="xs:double"/>
+			<xs:element minOccurs="0" name="TotalDebito" type="xs:double"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="RtaLote" nillable="true" type="tns:RtaLote"/>
+	<xs:complexType name="RtaConsultaTransacciones">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="DescripcionError" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="ExisteError" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="ListaTransacciones" nillable="true" type="tns:ArrayOfRtaTransaccion"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="RtaConsultaTransacciones" nillable="true" type="tns:RtaConsultaTransacciones"/>
+	<xs:complexType name="ArrayOfRtaTransaccion">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="RtaTransaccion" nillable="true" type="tns:RtaTransaccion"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfRtaTransaccion" nillable="true" type="tns:ArrayOfRtaTransaccion"/>
+	<xs:complexType name="RtaTransaccion">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Anexo" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="BancoDestino" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="BancoOrigen" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Causal" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="CuentaDestino" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="DatosDiscresionales" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="DescripcionCausal" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="DigitoChequeoBancoOrigen" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="FechaAplicacion" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="FechaEfectiva" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="IdAnexo" type="xs:int"/>
+			<xs:element minOccurs="0" name="IdDestino" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="IdEstado" type="xs:int"/>
+			<xs:element minOccurs="0" name="IdLote" type="xs:double"/>
+			<xs:element minOccurs="0" name="IdOriginador" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="IdTipoTransaccion" type="xs:int"/>
+			<xs:element minOccurs="0" name="IdTransaccion" type="xs:double"/>
+			<xs:element minOccurs="0" name="IdTransaccionDevuelta" type="xs:double"/>
+			<xs:element minOccurs="0" name="Monto" type="xs:double"/>
+			<xs:element minOccurs="0" name="MontoComision" type="xs:double"/>
+			<xs:element minOccurs="0" name="Naturaleza" type="xs:int"/>
+			<xs:element minOccurs="0" name="NombreBancoDestino" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="NombreDestinatario" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="NombreEstado" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="NombreTipoTransaccion" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="NumParRegistro" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="NumeroRutaOrigen" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="NumeroSeguimiento" nillable="true" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="RtaTransaccion" nillable="true" type="tns:RtaTransaccion"/>
+	<xs:complexType name="RtaConsultaTransaccionesExtend">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="CodigoSolicitud" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="DescripcionError" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="ExisteError" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="ListaTransacciones" nillable="true" type="q2:ArrayOfKeyValueOfintRtaDetalleTransaccionExtendereSxAxV" xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="RtaConsultaTransaccionesExtend" nillable="true" type="tns:RtaConsultaTransaccionesExtend"/>
+	<xs:complexType name="RtaDetalleTransaccionExtend">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Anexo" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Canal" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Causal" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="CuentaDestinatario" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="DescripcionCausal" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="EstadoPaquete" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="EstadoTx" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="FechaCargaTx" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="FechaTx" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="IdCanal" type="xs:int"/>
+			<xs:element minOccurs="0" name="IdDestinatario" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="IdEstadoPaquete" type="xs:int"/>
+			<xs:element minOccurs="0" name="IdEstadoTx" type="xs:int"/>
+			<xs:element minOccurs="0" name="IdPaquete" type="xs:int"/>
+			<xs:element minOccurs="0" name="IdTipoTransaccion" type="xs:int"/>
+			<xs:element minOccurs="0" name="IdTransaccion" type="xs:int"/>
+			<xs:element minOccurs="0" name="NombreArchivo" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="NombreBancoDestino" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="NombreDestinatario" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="TipoTransaccion" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="TransitoBancoDestino" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="ValorComision" type="xs:double"/>
+			<xs:element minOccurs="0" name="ValorTx" type="xs:double"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="RtaDetalleTransaccionExtend" nillable="true" type="tns:RtaDetalleTransaccionExtend"/>
+	<xs:complexType name="RtaConsultaTransaccionesIdExterno">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="DescripcionError" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="ExisteError" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="ListaTransacciones" nillable="true" type="tns:ArrayOfobjTransaccionIdExterno"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="RtaConsultaTransaccionesIdExterno" nillable="true" type="tns:RtaConsultaTransaccionesIdExterno"/>
+	<xs:complexType name="ArrayOfobjTransaccionIdExterno">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="objTransaccionIdExterno" nillable="true" type="tns:objTransaccionIdExterno"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfobjTransaccionIdExterno" nillable="true" type="tns:ArrayOfobjTransaccionIdExterno"/>
+	<xs:complexType name="objTransaccionIdExterno">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Anexo" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="BancoDestino" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="BancoOrigen" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Causal" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="CicloACH" type="xs:int"/>
+			<xs:element minOccurs="0" name="CuentaDestino" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="DatosDiscresionales" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="DescripcionCausal" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="DigitoChequeoBancoDestino" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="FechaAplicacion" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="FechaEfectiva" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="IdAcuseContra" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="IdAnexo" type="xs:int"/>
+			<xs:element minOccurs="0" name="IdDestino" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="IdEstado" type="xs:int"/>
+			<xs:element minOccurs="0" name="IdLote" type="xs:double"/>
+			<xs:element minOccurs="0" name="IdOriginador" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="IdTipoTransaccion" type="xs:int"/>
+			<xs:element minOccurs="0" name="IdTransaccion" type="xs:double"/>
+			<xs:element minOccurs="0" name="IdTransaccionDevuelta" type="xs:double"/>
+			<xs:element minOccurs="0" name="IndContra" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Monto" type="xs:double"/>
+			<xs:element minOccurs="0" name="MontoComision" type="xs:double"/>
+			<xs:element minOccurs="0" name="Naturaleza" type="xs:int"/>
+			<xs:element minOccurs="0" name="NombreBancoDestino" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="NombreDestinatario" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="NombreEstado" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="NombreTipoTransaccion" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="NumParRegistro" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="NumeroRutaOrigen" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="NumeroSeguimiento" nillable="true" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="objTransaccionIdExterno" nillable="true" type="tns:objTransaccionIdExterno"/>
+	<xs:simpleType name="objTipoOperacion.TipoOperacion">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Credito"/>
+			<xs:enumeration value="Debito"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="objTipoOperacion.TipoOperacion" nillable="true" type="tns:objTipoOperacion.TipoOperacion"/>
+	<xs:complexType name="rtaCallCenterListaMovimientos">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="DescripcionError" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="ExisteError" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="ListaMovimientos" nillable="true" type="tns:ArrayOfobjMovimiento"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="rtaCallCenterListaMovimientos" nillable="true" type="tns:rtaCallCenterListaMovimientos"/>
+	<xs:complexType name="ArrayOfobjMovimiento">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="objMovimiento" nillable="true" type="tns:objMovimiento"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfobjMovimiento" nillable="true" type="tns:ArrayOfobjMovimiento"/>
+	<xs:complexType name="objMovimiento">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="BcoDestinoTx" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="BcoOrigenTx" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="CtaDestTx" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="EstadoTx" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="FechaTx" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="IdDestTx" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="IdTx" type="xs:double"/>
+			<xs:element minOccurs="0" name="IndContrapartida" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="MontoTx" type="xs:double"/>
+			<xs:element minOccurs="0" name="NivelAplic" type="xs:int"/>
+			<xs:element minOccurs="0" name="TipoCtaDestTx" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="TipoTx" nillable="true" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="objMovimiento" nillable="true" type="tns:objMovimiento"/>
+	<xs:complexType name="rtaCallCenterDetalleTransaccion">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="DescripcionError" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="DetalleMovimiento" nillable="true" type="tns:objMovimientoDetalle"/>
+			<xs:element minOccurs="0" name="ExisteError" type="xs:boolean"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="rtaCallCenterDetalleTransaccion" nillable="true" type="tns:rtaCallCenterDetalleTransaccion"/>
+	<xs:complexType name="objMovimientoDetalle">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Adenda" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="BcoDestinoTx" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="BcoOrigenTx" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Canal" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Causal" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="CtaDestTx" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="CtaOrg" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="DescLote" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="EstLote" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="EstadoTx" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="FechaTx" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="IdDestTx" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="IdLote" type="xs:double"/>
+			<xs:element minOccurs="0" name="IdOrig" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="IdPaq" type="xs:double"/>
+			<xs:element minOccurs="0" name="IdTx" type="xs:double"/>
+			<xs:element minOccurs="0" name="IndContrapartida" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="MontoTx" type="xs:double"/>
+			<xs:element minOccurs="0" name="NomArchivo" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="NomDestTx" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="NomOrig" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="NumeroProceso" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Talon" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="TipoCtaDestTx" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="TipoOperacion" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="TipoTx" nillable="true" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="objMovimientoDetalle" nillable="true" type="tns:objMovimientoDetalle"/>
+	<xs:complexType name="rtaCallCenterDetalleContrapartida">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="DescripcionError" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="ExisteError" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="ListaDetalleContrapartida" nillable="true" type="tns:ArrayOfobjMovimientoDetalle"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="rtaCallCenterDetalleContrapartida" nillable="true" type="tns:rtaCallCenterDetalleContrapartida"/>
+	<xs:complexType name="ArrayOfobjMovimientoDetalle">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="objMovimientoDetalle" nillable="true" type="tns:objMovimientoDetalle"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfobjMovimientoDetalle" nillable="true" type="tns:ArrayOfobjMovimientoDetalle"/>
+</xs:schema>

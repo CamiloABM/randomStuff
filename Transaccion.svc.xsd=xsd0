@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/">
+	<xs:import schemaLocation="Transaccion.svc.xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WSSolucionNeurona"/>
+	<xs:element name="Probar">
+		<xs:complexType>
+			<xs:sequence/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ProbarResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ProbarResult" type="xs:boolean"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CrearTransOriginador">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="Rqid" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="FechaMsg" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="TipoId" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="IdOrig" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="CtaOrigen" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="IdProd" type="xs:long"/>
+				<xs:element minOccurs="0" name="Formato" type="xs:long"/>
+				<xs:element minOccurs="0" name="XMLPLANO" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="Canal" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="DirIpCanal" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="FechaEfectiva" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="NivelAplic" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="Registros" type="xs:long"/>
+				<xs:element minOccurs="0" name="DirIP" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="MontoTotal" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="Firma" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="Contenido" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="IDUsuario" type="xs:long"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CrearTransOriginadorResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="CrearTransOriginadorResult" nillable="true" type="q1:RtaCrearTransOriginador" xmlns:q1="http://schemas.datacontract.org/2004/07/WSSolucionNeurona"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CrearTransOriginadorExterno">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="Rqid" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="FechaMsg" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="TipoId" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="IdOrig" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="NombreOrig" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="CtaOrigen" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="IdProd" type="xs:long"/>
+				<xs:element minOccurs="0" name="Formato" type="xs:long"/>
+				<xs:element minOccurs="0" name="XMLPLANO" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="Canal" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="DirIpCanal" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="FechaEfectiva" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="NivelAplic" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="Registros" type="xs:long"/>
+				<xs:element minOccurs="0" name="DirIP" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="MontoTotal" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="Firma" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="Contenido" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="IDUsuario" type="xs:long"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CrearTransOriginadorExternoResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="CrearTransOriginadorExternoResult" nillable="true" type="q2:RtaCrearTransOriginador" xmlns:q2="http://schemas.datacontract.org/2004/07/WSSolucionNeurona"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CrearTransaccionVerificada">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="Rqid" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="FechaMsg" type="xs:dateTime"/>
+				<xs:element minOccurs="0" name="TipoId" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="IdOrig" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="NombreOrig" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="CtaOrigen" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="IdProd" type="xs:long"/>
+				<xs:element minOccurs="0" name="Formato" type="xs:long"/>
+				<xs:element minOccurs="0" name="XMLPLANO" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="Canal" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="DirIpCanal" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="FechaEfectiva" type="xs:dateTime"/>
+				<xs:element minOccurs="0" name="NivelAplic" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="Registros" type="xs:long"/>
+				<xs:element minOccurs="0" name="DirIP" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="MontoTotal" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="Firma" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="Contenido" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="IDUsuario" type="xs:long"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CrearTransaccionVerificadaResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="CrearTransaccionVerificadaResult" nillable="true" type="q3:RtaCrearTransaccionVerficada" xmlns:q3="http://schemas.datacontract.org/2004/07/WSSolucionNeurona"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarComisiones">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="Rqid" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="FechaMsg" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="TipoId" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="IdOrig" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="CtaOrigen" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="IdProd" type="xs:long"/>
+				<xs:element minOccurs="0" name="Formato" type="xs:long"/>
+				<xs:element minOccurs="0" name="XMLPLANO" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="Registros" type="xs:long"/>
+				<xs:element minOccurs="0" name="MontoTotal" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="Firma" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="Contenido" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="Canal" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="DirIpCanal" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="IDUsuario" type="xs:long"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarComisionesResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ConsultarComisionesResult" nillable="true" type="q4:RtaConsComision" xmlns:q4="http://schemas.datacontract.org/2004/07/WSSolucionNeurona"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarComisionesFacturador">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="Rqid" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="FechaMsg" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="TipoId" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="IdOrig" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="CtaOrigen" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="IdProd" type="xs:long"/>
+				<xs:element minOccurs="0" name="Formato" type="xs:long"/>
+				<xs:element minOccurs="0" name="XMLPLANO" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="Registros" type="xs:long"/>
+				<xs:element minOccurs="0" name="MontoTotal" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="Firma" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="Contenido" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="Canal" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="DirIpCanal" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="IDUsuario" type="xs:long"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarComisionesFacturadorResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ConsultarComisionesFacturadorResult" nillable="true" type="q5:RtaConsultarComisionesFacturador" xmlns:q5="http://schemas.datacontract.org/2004/07/WSSolucionNeurona"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="InactivarPrenota">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="IdTrn" type="xs:double"/>
+				<xs:element minOccurs="0" name="Canal" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="DirIpCanal" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="IDUsuario" type="xs:long"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="InactivarPrenotaResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="InactivarPrenotaResult" nillable="true" type="q6:RtaInactivarPrenota" xmlns:q6="http://schemas.datacontract.org/2004/07/WSSolucionNeurona"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarVentana">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="IdProducto" type="xs:double"/>
+				<xs:element minOccurs="0" name="Canal" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="DirIpCanal" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="IDUsuario" type="xs:long"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarVentanaResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ConsultarVentanaResult" nillable="true" type="q7:RtaConsultarVentana" xmlns:q7="http://schemas.datacontract.org/2004/07/WSSolucionNeurona"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultaTransaccionesPorPaquete">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="IdOriginador" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="TipoIdOrig" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="FechaInicial" type="xs:dateTime"/>
+				<xs:element minOccurs="0" name="FechaFinal" type="xs:dateTime"/>
+				<xs:element minOccurs="0" name="CuentaOrigen" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="OperadorCredito" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="OperadorDebito" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="MontoCredito" type="xs:double"/>
+				<xs:element minOccurs="0" name="MontoDebito" type="xs:double"/>
+				<xs:element minOccurs="0" name="NombreArchivo" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="IDUsuario" type="xs:long"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultaTransaccionesPorPaqueteResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ConsultaTransaccionesPorPaqueteResult" nillable="true" type="q8:RtaConsultaTransaccionesPorPaquete" xmlns:q8="http://schemas.datacontract.org/2004/07/WSSolucionNeurona"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultaTransaccionesPorLote">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="IdOriginador" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="TipoIdOrig" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="IdPaquete" type="xs:int"/>
+				<xs:element minOccurs="0" name="Historico" type="xs:boolean"/>
+				<xs:element minOccurs="0" name="Fecha" type="xs:dateTime"/>
+				<xs:element minOccurs="0" name="CuentaOrigen" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="IdProducto" type="xs:int"/>
+				<xs:element minOccurs="0" name="OperadorCredito" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="OperadorDebito" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="MontoCredito" type="xs:double"/>
+				<xs:element minOccurs="0" name="MontoDebito" type="xs:double"/>
+				<xs:element minOccurs="0" name="IDUsuario" type="xs:long"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultaTransaccionesPorLoteResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ConsultaTransaccionesPorLoteResult" nillable="true" type="q9:RtaConsultaTransaccionesPorLote" xmlns:q9="http://schemas.datacontract.org/2004/07/WSSolucionNeurona"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultaTransacciones">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="IdOriginador" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="TipoIdOrig" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="IdLote" type="xs:int"/>
+				<xs:element minOccurs="0" name="Historico" type="xs:boolean"/>
+				<xs:element minOccurs="0" name="FechaInicial" type="xs:dateTime"/>
+				<xs:element minOccurs="0" name="FechaFinal" type="xs:dateTime"/>
+				<xs:element minOccurs="0" name="CuentaOrigen" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="TipoTransaccion" type="xs:int"/>
+				<xs:element minOccurs="0" name="Monto" type="xs:double"/>
+				<xs:element minOccurs="0" name="IdDestino" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="CuentaDestino" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="NombreDestinatario" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="IdEstado" type="xs:int"/>
+				<xs:element minOccurs="0" name="Referencia" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="IDUsuario" type="xs:long"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultaTransaccionesResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ConsultaTransaccionesResult" nillable="true" type="q10:RtaConsultaTransacciones" xmlns:q10="http://schemas.datacontract.org/2004/07/WSSolucionNeurona"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultaTransaccionesExtend">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="CodigoSolicitud" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="IdOriginador" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="TipoIdOrig" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="IdPaquete" type="xs:int"/>
+				<xs:element minOccurs="0" name="FechaInicial" type="xs:dateTime"/>
+				<xs:element minOccurs="0" name="FechaFinal" type="xs:dateTime"/>
+				<xs:element minOccurs="0" name="CuentaOrigen" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="CuentaDestino" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="NumeroRegistros" type="xs:int"/>
+				<xs:element minOccurs="0" name="NumeroPagina" type="xs:int"/>
+				<xs:element minOccurs="0" name="IDUsuario" type="xs:long"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultaTransaccionesExtendResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ConsultaTransaccionesExtendResult" nillable="true" type="q11:RtaConsultaTransaccionesExtend" xmlns:q11="http://schemas.datacontract.org/2004/07/WSSolucionNeurona"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarTransaccionesPorIdExterno">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="idExterno" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="idUsuario" type="xs:long"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarTransaccionesPorIdExternoResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ConsultarTransaccionesPorIdExternoResult" nillable="true" type="q12:RtaConsultaTransaccionesIdExterno" xmlns:q12="http://schemas.datacontract.org/2004/07/WSSolucionNeurona"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarMovimientosCallCenter">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="Operacion" type="q13:objTipoOperacion.TipoOperacion" xmlns:q13="http://schemas.datacontract.org/2004/07/WSSolucionNeurona"/>
+				<xs:element minOccurs="0" name="Identificacion" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="Cuenta" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="MontoMin" type="xs:double"/>
+				<xs:element minOccurs="0" name="MontoMax" type="xs:double"/>
+				<xs:element minOccurs="0" name="FechaIni" type="xs:dateTime"/>
+				<xs:element minOccurs="0" name="FechaFin" type="xs:dateTime"/>
+				<xs:element minOccurs="0" name="Marca" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="NumeroProceso" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="Talon" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="IDUsuario" type="xs:long"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarMovimientosCallCenterResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ConsultarMovimientosCallCenterResult" nillable="true" type="q14:rtaCallCenterListaMovimientos" xmlns:q14="http://schemas.datacontract.org/2004/07/WSSolucionNeurona"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarDetalleMovimientosCallCenter">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="Operacion" type="q15:objTipoOperacion.TipoOperacion" xmlns:q15="http://schemas.datacontract.org/2004/07/WSSolucionNeurona"/>
+				<xs:element minOccurs="0" name="IDTransaccion" type="xs:long"/>
+				<xs:element minOccurs="0" name="FechaTX" type="xs:dateTime"/>
+				<xs:element minOccurs="0" name="IndicadorContrapartida" type="xs:boolean"/>
+				<xs:element minOccurs="0" name="NivelAplicacion" type="xs:int"/>
+				<xs:element minOccurs="0" name="MontoMin" type="xs:double"/>
+				<xs:element minOccurs="0" name="MontoMax" type="xs:double"/>
+				<xs:element minOccurs="0" name="Talon" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="IDUsuario" type="xs:long"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarDetalleMovimientosCallCenterResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ConsultarDetalleMovimientosCallCenterResult" nillable="true" type="q16:rtaCallCenterDetalleTransaccion" xmlns:q16="http://schemas.datacontract.org/2004/07/WSSolucionNeurona"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarDetalleContrapartidaCallCenter">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="Operacion" type="q17:objTipoOperacion.TipoOperacion" xmlns:q17="http://schemas.datacontract.org/2004/07/WSSolucionNeurona"/>
+				<xs:element minOccurs="0" name="IDTransaccion" type="xs:long"/>
+				<xs:element minOccurs="0" name="FechaTX" type="xs:dateTime"/>
+				<xs:element minOccurs="0" name="NivelAplicacion" type="xs:int"/>
+				<xs:element minOccurs="0" name="MontoMin" type="xs:double"/>
+				<xs:element minOccurs="0" name="MontoMax" type="xs:double"/>
+				<xs:element minOccurs="0" name="Talon" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="IDUsuario" type="xs:long"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarDetalleContrapartidaCallCenterResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ConsultarDetalleContrapartidaCallCenterResult" nillable="true" type="q18:rtaCallCenterDetalleContrapartida" xmlns:q18="http://schemas.datacontract.org/2004/07/WSSolucionNeurona"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
